@@ -14,8 +14,9 @@ height = 0.5
 [node name="Player3D" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_uvp7c")
-_speed = 5.0
-_acceleration = 10.0
+_speed = 10.0
+_acceleration = 45.0
+_deceleration = 30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ogpqd")
