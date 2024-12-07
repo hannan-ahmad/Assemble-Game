@@ -33,6 +33,9 @@ size = Vector3(50, 2, 50)
 material = SubResource("StandardMaterial3D_nulb4")
 
 [node name="Player3D" parent="." instance=ExtResource("1_syjmp")]
+_speed = 10.0
+_acceleration = 40.0
+_deceleration = 70.0
 
 [node name="CameraController" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
