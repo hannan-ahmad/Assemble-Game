@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=3 uid="uid://cm75wbgfari67"]
+
+[ext_resource type="PackedScene" uid="uid://c7j1akit8n6g7" path="res://scenes/player_3d.tscn" id="1_ewtvs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1tq2m"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_4yelk"]
+sky_material = SubResource("ProceduralSkyMaterial_1tq2m")
+
+[sub_resource type="Environment" id="Environment_jqf8w"]
+background_mode = 2
+sky = SubResource("Sky_4yelk")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04gce"]
+albedo_color = Color(0.180392, 0.203922, 0.25098, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_slwq0"]
+material = SubResource("StandardMaterial3D_04gce")
+size = Vector3(100, 2, 100)
+
+[sub_resource type="GDScript" id="GDScript_nbj1w"]
+script/source = "extends Area3D
+
+@export var _camera_to_move: Camera3D
+@export var _move_position: Marker3D
+@export var _move_speed: float = 0.3
+
+
+func _on_body_entered(body: Node3D) -> void:
+
+	if body is Player:
+		var tween := create_tween()
+
+		tween.set_ease(Tween.EASE_IN)
+
+		tween.tween_property(_camera_to_move, \"global_position:x\", _move_position.global_position.x, _move_speed)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xoo8"]
+size = Vector3(1, 3, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y57yr"]
+size = Vector3(1, 3, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i1ka3"]
+size = Vector3(1.2, 3, 20.2)
+
+[node name="Game" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jqf8w")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_slwq0")
+
+[node name="Player3D" parent="." instance=ExtResource("1_ewtvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 0)
+
+[node name="CameraController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 30)
+fov = 30.0
+
+[node name="Wall" type="Area3D" parent="." node_paths=PackedStringArray("_camera_to_move", "_move_position")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+script = SubResource("GDScript_nbj1w")
+_camera_to_move = NodePath("../CameraController/Camera3D")
+_move_position = NodePath("../VisibleWallMarker")
+_move_speed = 1.5
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+shape = SubResource("BoxShape3D_2xoo8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
+mesh = SubResource("BoxMesh_y57yr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+shape = SubResource("BoxShape3D_i1ka3")
+
+[node name="InvisibleWall" type="Area3D" parent="." node_paths=PackedStringArray("_camera_to_move", "_move_position")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 0)
+script = SubResource("GDScript_nbj1w")
+_camera_to_move = NodePath("../CameraController/Camera3D")
+_move_position = NodePath("../InvisibleWallMarker")
+_move_speed = 1.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
+shape = SubResource("BoxShape3D_i1ka3")
+
+[node name="VisibleWallMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 0)
+
+[node name="InvisibleWallMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5, 0)
+
+[connection signal="body_entered" from="Wall" to="Wall" method="_on_body_entered"]
+[connection signal="body_entered" from="InvisibleWall" to="InvisibleWall" method="_on_body_entered"]
