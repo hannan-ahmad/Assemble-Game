@@ -1,10 +1,4 @@
 res://scenes/game.tscn
 res://scenes/player_3d.tscn
-res://code/player_3d.gd
-res://scenes/enemy.gd
-res://resources/enemy_stats.gd
-res://resources/resource_scripts/enemy_stats.gd
-res://code/enemy.gd
 res://scenes/enemy_1.tscn
-res://scenes/enemy_spawn_script.gd
-res://code/kitchen_transition.gd
+res://code/camera_controller.gd

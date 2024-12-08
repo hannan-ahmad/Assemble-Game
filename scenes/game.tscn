@@ -58,6 +58,7 @@ _kitchen_camera_position = Vector3(-20.3137, 11.0685, 7.71569)
 _kitchen_camera_rotation = Vector3(-1.10965, 0, 0)
 _front_desk_camera_position = Vector3(14.4063, 11.0685, 7.71569)
 _front_desk_camera_rotation = Vector3(-1.10965, 0, 0)
+_camera_tween_speed = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraController"]
 transform = Transform3D(1, 0, 0, 0, 0.444979, 0.895541, 0, -0.895541, 0.444979, 14.4063, 11.0685, 7.71569)
