@@ -50,6 +50,10 @@ func _on_area_3d_switch_area() -> void:
         false:
             global_position.x += 3.0
 
+
+
+
+
 func _handle_input(delta: float) -> void:
     var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
     var direction := Vector3(input_vector.x, 0.0, input_vector.y)
@@ -65,7 +69,10 @@ func _handle_input(delta: float) -> void:
     else:
         velocity = velocity.move_toward(Vector3.ZERO, _deceleration * delta)
 
-    match _in_kitchen:
+
+
+
+    match _in_kitchen: #PUT DIFFERENCES HERE TRUE MEANS THAT YOU ARE IN THE KITCHEN
         true:
             axis_lock_angular_y = false
         false:
