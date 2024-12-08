@@ -1,9 +1,0 @@
-res://scenes/game.tscn
-res://scenes/player_3d.tscn
-res://code/player_3d.gd
-res://scenes/camera_controller.gd
-res://state machine/state.gd
-res://state machine/state_machine.gd
-res://code/camera_controller.gd
-res://scenes/kitchen_transition.gd
-res://code/kitchen_transition.gd
