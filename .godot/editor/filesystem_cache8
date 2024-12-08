@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733637536
-icon.svg::CompressedTexture2D::1589796833237804034::1733637278::1733637537::1::::<><>::
+::res://::1733638149
+icon.svg::CompressedTexture2D::1589796833237804034::1733637278::1733638100::1::::<><>::
 ::res://addons/::1733637278
 ::res://addons/godot-git-plugin/::1733637278
 git_plugin.gdextension::GDExtension::-1::1733637278::0::1::::<><>::
@@ -8,15 +8,15 @@ plugin.cfg::TextFile::-1::1733637278::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1733637278::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1733637278
 ::res://addons/godot-git-plugin/macos/::1733637278
-::res://addons/godot-git-plugin/win64/::1733637528
+::res://addons/godot-git-plugin/win64/::1733638141
 ::res://assemble-theme-game/::1733637360
-::res://code/::1733637278
-camera_controller.gd::GDScript::-1::1733637278::0::1::::<>Node3D<>::
-kitchen_transition.gd::GDScript::-1::1733637278::0::1::::<>Area3D<>::
-player_3d.gd::GDScript::-1::1733637278::0::1::::<>CharacterBody3D<>::
-::res://scenes/::1733637279
-game.tscn::PackedScene::6562697189166416079::1733637279::0::1::::<><>::uid://cu4na6wh75dcn::::res://scenes/player_3d.tscn<>res://code/camera_controller.gd<>res://code/kitchen_transition.gd
-player_3d.tscn::PackedScene::6237276178492092333::1733637279::0::1::::<><>::res://code/player_3d.gd
-::res://state machine/::1733637279
-state.gd::GDScript::-1::1733637279::0::1::::State<>Node<>::
-state_machine.gd::GDScript::-1::1733637279::0::1::::StateMachine<>Node<>::
+::res://code/::1733638080
+camera_controller.gd::GDScript::-1::1733638080::0::1::::<>Node3D<>::
+kitchen_transition.gd::GDScript::-1::1733638080::0::1::::<>Area3D<>::
+player_3d.gd::GDScript::-1::1733638080::0::1::::<>CharacterBody3D<>::
+::res://scenes/::1733638080
+game.tscn::PackedScene::6562697189166416079::1733638080::0::1::::<><>::uid://cu4na6wh75dcn::::res://scenes/player_3d.tscn<>res://code/camera_controller.gd<>res://code/kitchen_transition.gd
+player_3d.tscn::PackedScene::6237276178492092333::1733638080::0::1::::<><>::res://code/player_3d.gd
+::res://state machine/::1733638080
+state.gd::GDScript::-1::1733638080::0::1::::State<>Node<>::
+state_machine.gd::GDScript::-1::1733638080::0::1::::StateMachine<>Node<>::
