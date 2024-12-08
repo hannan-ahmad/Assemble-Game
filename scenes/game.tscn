@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0rawtpjo3368"]
+[gd_scene load_steps=13 format=3 uid="uid://c0rawtpjo3368"]
 
 [ext_resource type="PackedScene" uid="uid://cu4na6wh75dcn" path="res://scenes/player_3d.tscn" id="1_syjmp"]
 [ext_resource type="Script" path="res://code/camera_controller.gd" id="2_a08en"]
 [ext_resource type="Script" path="res://code/kitchen_transition.gd" id="3_mevqq"]
+[ext_resource type="Script" path="res://scenes/enemy_spawn_script.gd" id="4_t2hxp"]
+[ext_resource type="PackedScene" uid="uid://c8cvbia883kae" path="res://scenes/enemy_1.tscn" id="5_lyoov"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6t81"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -79,6 +81,31 @@ script = ExtResource("3_mevqq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675028, 0, 0.68576)
 shape = SubResource("BoxShape3D_yx0bk")
 
+[node name="spawn_locations" type="Node3D" parent="."]
+script = ExtResource("4_t2hxp")
+_enemies = Array[PackedScene]([ExtResource("5_lyoov")])
+
+[node name="Marker3D" type="Marker3D" parent="spawn_locations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.753, 0, -7.31226)
+
+[node name="Marker3D2" type="Marker3D" parent="spawn_locations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.753, 0, -3.312)
+
+[node name="Marker3D3" type="Marker3D" parent="spawn_locations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.753, 0, 0.688)
+
+[node name="Marker3D4" type="Marker3D" parent="spawn_locations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.753, 0, 4.688)
+
+[node name="Marker3D5" type="Marker3D" parent="spawn_locations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.753, 0, 8.688)
+
+[node name="enemy_spaw_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
 [connection signal="switch_area" from="Area3D" to="Player3D" method="_on_area_3d_switch_area"]
 [connection signal="switch_area" from="Area3D" to="CameraController" method="_on_area_3d_switch_area"]
+[connection signal="timeout" from="enemy_spaw_timer" to="spawn_locations" method="_on_enemy_spaw_timer_timeout"]
