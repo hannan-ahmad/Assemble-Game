@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu4na6wh75dcn"]
+
+[ext_resource type="Script" path="res://code/player_3d.gd" id="1_uvp7c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ogpqd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_nfh0i"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1g7ci"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vck0d"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="Player3D" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_uvp7c")
+_speed = 29.205
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ogpqd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_nfh0i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.5, -0.5)
+mesh = SubResource("CylinderMesh_1g7ci")
+
+[node name="RayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+target_position = Vector3(0, 0, -1.5)
+
+[node name="ItemSpawnPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -1.2)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 101.12
+offset_top = 100.0
+offset_right = 589.12
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryUI" type="GridContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.277778
+anchor_bottom = 0.493827
+columns = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel2" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel3" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel4" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel5" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel6" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel7" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel8" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel9" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel10" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel11" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
+
+[node name="Panel12" type="Button" parent="Control/InventoryUI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_vck0d")
