@@ -1,8 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1733569945
+::res://::1733627341
 icon.svg::CompressedTexture2D::1589796833237804034::1733569350::1733569946::1::::<><>::
-::res://code/::1733569350
-player_3d.gd::GDScript::-1::1733569350::0::1::::<>CharacterBody3D<>::
-::res://scenes/::1733569350
-game.tscn::PackedScene::6562697189166416079::1733569350::0::1::::<><>::uid://cu4na6wh75dcn::::res://scenes/player_3d.tscn
-player_3d.tscn::PackedScene::6237276178492092333::1733569350::0::1::::<><>::res://code/player_3d.gd
+::res://addons/::1733570862
+::res://addons/godot-git-plugin/::1733570863
+git_plugin.gdextension::GDExtension::-1::1733570862::0::1::::<><>::
+plugin.cfg::TextFile::-1::1733570863::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1733570863::0::1::::<><>::
+::res://addons/godot-git-plugin/linux/::1733570863
+::res://addons/godot-git-plugin/macos/::1733570863
+::res://addons/godot-git-plugin/win64/::1733570863
+::res://code/::1733626629
+camera_controller.gd::GDScript::-1::1733627270::0::1::::<>Node3D<>::
+player_3d.gd::GDScript::-1::1733625744::0::1::::<>CharacterBody3D<>::
+::res://scenes/::1733627384
+game.tscn::PackedScene::6562697189166416079::1733627384::0::1::::<><>::uid://cu4na6wh75dcn::::res://scenes/player_3d.tscn<>res://code/camera_controller.gd
+player_3d.tscn::PackedScene::6237276178492092333::1733627359::0::1::::<><>::res://code/player_3d.gd
+kitchen_transition.gd::GDScript::-1::1733627385::0::1::::<>Area3D<>::
+::res://state machine/::1733626727
+state_machine.gd::GDScript::-1::1733626735::0::1::::StateMachine<>Node<>::
+state.gd::GDScript::-1::1733626696::0::1::::State<>Node<>::
