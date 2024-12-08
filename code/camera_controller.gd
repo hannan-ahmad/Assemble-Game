@@ -12,6 +12,8 @@ extends Node3D
 var _in_kitchen: bool = false
 
 func _kitchen_switch() -> void:
+
+    
     if _in_kitchen:
         _camera.global_position = _kitchen_camera_position
         _camera.global_rotation = _kitchen_camera_rotation

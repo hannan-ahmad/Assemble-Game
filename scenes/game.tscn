@@ -51,7 +51,6 @@ _acceleration = 40.0
 _deceleration = 60.0
 
 [node name="CameraController" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("2_a08en")
 _kitchen_camera_position = Vector3(-20.3137, 11.0685, 7.71569)
 _kitchen_camera_rotation = Vector3(-1.10965, 0, 0)
