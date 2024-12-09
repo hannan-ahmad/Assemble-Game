@@ -44,8 +44,13 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func place_item_on_simple_counter(simple_counter: Counter) -> void:
-	var new_item: Node3D = _item_scene.instantiate()
+	if simple_counter.current_item == null:
+		var new_item: Node3D = _item_scene.instantiate()
 
-	simple_counter.item_spawn_point.add_child(new_item)
+		simple_counter.item_spawn_point.add_child(new_item)
 
-	simple_counter.current_item = new_item
+		simple_counter.current_item = new_item
+
+		player.current_item[_item_name] -= 1
+
+		player.update_inventory_ui(player.indexes_dict[_item_name])
