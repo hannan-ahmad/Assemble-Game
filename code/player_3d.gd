@@ -47,7 +47,6 @@ func _on_inventory_button_pressed(button: Button) -> void:
 			for i: String in indexes_dict.keys():
 				if indexes_dict[i] == button.get_index():
 					counter_function[i].place_item_on_simple_counter(_current_counter)
-					current_item[i] -= 1
 
 					update_inventory_ui(indexes_dict[i])
 
