@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1ma68t7l2f16"]
+
+[ext_resource type="PackedScene" uid="uid://41s7ybg1gehn" path="res://gltf/food_ingredient_tomato.gltf" id="1_ch6fm"]
+
+[node name="Tomato" type="Node3D"]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
+
+[node name="food_ingredient_tomato2" parent="." instance=ExtResource("1_ch6fm")]
