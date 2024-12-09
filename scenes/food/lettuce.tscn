@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dky6804mp1mss"]
+
+[ext_resource type="PackedScene" uid="uid://jwau4f0nsljp" path="res://gltf/food_ingredient_lettuce.gltf" id="1_0aas5"]
+
+[node name="Lettuce" type="Node3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="food_ingredient_lettuce2" parent="." instance=ExtResource("1_0aas5")]
