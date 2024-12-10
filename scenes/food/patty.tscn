@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvnc8kls77dep"]
+
+[ext_resource type="PackedScene" uid="uid://l5bgv7dix0ly" path="res://gltf/food_ingredient_burger_uncooked.gltf" id="1_f76sr"]
+
+[node name="Patty" type="Node3D" groups=["patty"]]
+
+[node name="food_ingredient_burger_uncooked2" parent="." instance=ExtResource("1_f76sr")]
